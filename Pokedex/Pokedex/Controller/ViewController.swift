@@ -7,16 +7,41 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
     private var pokemons = [Pokemon]()
-    
+    private var musicPlayer:AVAudioPlayer!
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         let pokemonCSVParser = PokemonCSVParser()
         pokemons = pokemonCSVParser.pokemons
+        configureAudioPlayer()
+    }
+    
+    @IBAction func onMusicButtonPressed(_ sender: Any) {
+        if musicPlayer.isPlaying {
+            musicPlayer.pause()
+            (sender as! UIButton).alpha = 0.3
+        } else {
+            musicPlayer.play()
+            (sender as! UIButton).alpha = 1.0
+        }
+    }
+    
+    func configureAudioPlayer(){
+        let path = Bundle.main.path(forResource: "music", ofType: "mp3")!
+        do{
+            let url = URL(string: path)!
+            musicPlayer = try AVAudioPlayer(contentsOf: url)
+            musicPlayer.prepareToPlay()
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.play()
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
     }
 }
 

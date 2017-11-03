@@ -12,6 +12,9 @@
         <array key="KohinoorBangla.ttc">
             <string>KohinoorBangla-Semibold</string>
         </array>
+        <array key="pokemon.ttf">
+            <string>PokemonSolidNormal</string>
+        </array>
     </customFonts>
     <scenes>
         <!--View Controller-->
@@ -24,9 +27,34 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhM-De-kIg">
                                 <rect key="frame" x="0.0" y="20" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokedex" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHa-x3-C4f">
+                                        <rect key="frame" x="148" y="20" width="79" height="30"/>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="20"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOZ-e0-oHR">
+                                        <rect key="frame" x="321" y="20" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="O10-zZ-kSV"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="music.png"/>
+                                        <connections>
+                                            <action selector="onMusicButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pAa-jG-MFp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.34509803921568627" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstItem="oHa-x3-C4f" firstAttribute="centerX" secondItem="lhM-De-kIg" secondAttribute="centerX" id="7sq-WF-fQD"/>
+                                    <constraint firstAttribute="trailing" secondItem="yOZ-e0-oHR" secondAttribute="trailing" constant="8" id="ApS-hh-WRx"/>
+                                    <constraint firstItem="oHa-x3-C4f" firstAttribute="centerY" secondItem="lhM-De-kIg" secondAttribute="centerY" id="MBB-yt-cwV"/>
+                                    <constraint firstAttribute="bottom" secondItem="oHa-x3-C4f" secondAttribute="bottom" constant="20" id="Oun-3N-fwa"/>
+                                    <constraint firstItem="yOZ-e0-oHR" firstAttribute="height" secondItem="oHa-x3-C4f" secondAttribute="height" id="mze-Nb-XFB"/>
+                                    <constraint firstItem="oHa-x3-C4f" firstAttribute="top" secondItem="lhM-De-kIg" secondAttribute="top" constant="20" id="nxt-0K-lto"/>
                                     <constraint firstAttribute="height" constant="70" id="t5D-sb-tMp"/>
+                                    <constraint firstItem="yOZ-e0-oHR" firstAttribute="centerY" secondItem="oHa-x3-C4f" secondAttribute="centerY" id="tAz-cy-fqW"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="t8w-PL-zWh">
@@ -128,5 +156,6 @@
     <resources>
         <image name="1" width="120" height="120"/>
         <image name="bg" width="1920" height="1200"/>
+        <image name="music.png" width="100" height="100"/>
     </resources>
 </document>
