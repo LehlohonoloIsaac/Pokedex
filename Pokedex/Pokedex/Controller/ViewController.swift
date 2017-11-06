@@ -49,6 +49,16 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "PokemonDetailVC" {
+            if let pokemonDetailVC = segue.destination as? PokemonDetailVC {
+                if let pokemon = sender as? Pokemon {
+                    pokemonDetailVC.pokemon = pokemon
+                }
+            }
+        }
+    }
 }
 
 extension ViewController: UICollectionViewDataSource{
@@ -80,6 +90,13 @@ extension ViewController: UICollectionViewDataSource{
 }
 extension ViewController: UICollectionViewDelegate{
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var pokemon: Pokemon!
+        if inSearchMode {
+            pokemon = filteredPokemons[indexPath.row]
+        }else {
+            pokemon = pokemons[indexPath.row]
+        }
+        performSegue(withIdentifier: "PokemonDetailVC", sender: pokemon)
     }
 }
 
