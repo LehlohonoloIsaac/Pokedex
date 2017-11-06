@@ -57,7 +57,7 @@
                                     <constraint firstItem="yOZ-e0-oHR" firstAttribute="centerY" secondItem="oHa-x3-C4f" secondAttribute="centerY" id="tAz-cy-fqW"/>
                                 </constraints>
                             </view>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="t8w-PL-zWh">
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="prominent" translatesAutoresizingMaskIntoConstraints="NO" id="t8w-PL-zWh">
                                 <rect key="frame" x="0.0" y="90" width="375" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="vLD-Nd-4JZ"/>
@@ -146,6 +146,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="u24-Ky-sYC" id="E98-3I-oPn"/>
+                        <outlet property="searchBar" destination="t8w-PL-zWh" id="ZWT-BJ-Cac"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
