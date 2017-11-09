@@ -52,6 +52,12 @@ class PokemonDetailVC: UIViewController {
         heightLabel.text = pokemon.height
         weightLabel.text = pokemon.weight
         experienceLabel.text = pokemon.experience
+        if !pokemon.nextEvolution.isEmpty {
+              nextEvoImage.image = UIImage(named: pokemon.nextEvolution)
+            nextEvoImage.contentMode = .scaleAspectFit
+        }else{
+            nextEvoImage.isHidden = true
+        }
     }
     
     @IBAction func onBackButtonPressed(_ sender: UIButton) {

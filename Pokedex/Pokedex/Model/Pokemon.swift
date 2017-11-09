@@ -103,6 +103,19 @@ class Pokemon {
                             }
                         }
                     }
+                    
+                    //var primaryImage: String? = ""
+                    
+                    if let sprites = dict["sprites"] as? Dictionary<String,Any> {
+                        let images = sprites.values.filter({
+                            let val = $0 as? String
+                            if val == nil {
+                                return false
+                            }
+                            return val!.isEmpty
+                        })
+                        self._nextEvolution = images.first as? String
+                    }
                     completed()
                 }
             }else{
